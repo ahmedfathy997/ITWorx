@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/website/style.css">
+    <title>Home</title>
+</head>
+<header style="background-color: #F0FFFF; content:''; display: table; clear: both; ">
+    <div style="width: 100%; margin: 0 auto" >
+        <img style="float: left; width: 10%" src="https://media-exp1.licdn.com/dms/image/C4D0BAQFMzTjTVEOMUQ/company-logo_200_200/0/1572625502472?e=1665619200&v=beta&t=2zZ5_jdv5xYspB9qZ3GqDC-Y-y3pN5yLV46HwQN705Q">
+        <nav style="float: right;">
+            <ol style="padding-top: 15px; list-style: none; margin-right:15px;">
+                <li><a style="color: black;" href="#">Our story</a></li>
+                <li><a style="color: black;" href="#">Brands</a></li>
+                <li><a style="color: black;" href="#">Robotics</a></li>
+                <li><a style="color: black;" href="#">Media</a></li>
+                <li><a style="color: black;" href="#">Supports</a></li>
+            </ol>
+        </nav>
+    </div>
+</header>
+
+<body>
+<div class="product">
+<h1 class="title">Products</h1>
+<ul class="one">
+    {% for product in products %}
+        <li class="two">
+            <a href="{%url 'detail' product.id%}">
+            </a>
+                           <h3>{{product.name}}</h3>
+    <img class="image" src="{{ product.image.url }}" alt="{{product.name}}" width="85%">
+    </br>{{product.description}}</p>
+        </li>
+    {% endfor %}
+</ul>
+
+<a class="text" href="{% url 'home' %}"><button class="link" >Home</button></a>
+</div>
+</body>
+</html>

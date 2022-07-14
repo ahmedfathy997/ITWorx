@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product: {{product.name}}</title>
+    <link rel="stylesheet" href="/static/website/style.css">
+</head>
+<body>
+<div class="solo">
+<h3 style="color:#D3D3D3; font-style: oblique; text-align: center;">{{product.name}}</h3>
+    <img class="image" src="{{ product.image.url }}" alt="{{product.name}}" width="100%">
+    <p class="text_color">{{product.description}}</p>
+</div>
+    <a class="text_deco" href="{% url 'home' %}"><button class="button" >Home</button></a>
+</body>
+</html>

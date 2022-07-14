@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/website/style.css">
+</head>
+<body>
+<header style="background-color: #F0FFFF; content:''; display: table; clear: both; ">
+    <div style="width: 100%; margin: 0 auto" >
+        <img style="float: left; width: 10%" src="https://media-exp1.licdn.com/dms/image/C4D0BAQFMzTjTVEOMUQ/company-logo_200_200/0/1572625502472?e=1665619200&v=beta&t=2zZ5_jdv5xYspB9qZ3GqDC-Y-y3pN5yLV46HwQN705Q">
+        <nav style="float: right;">
+            <ol style="padding-top: 15px; list-style: none; margin-right:15px;">
+                <li><a style="color: black;" href="#">Our story</a></li>
+                <li><a style="color: black;" href="#">Brands</a></li>
+                <li><a style="color: black;" href="#">Robotics</a></li>
+                <li><a style="color: black;" href="#">Media</a></li>
+                <li><a style="color: black;" href="#">Supports</a></li>
+            </ol>
+        </nav>
+    </div>
+</header>
+<h2>THE FUTURE</h2>
+    <p>
+      WAS FIVE MINUTES AGO.</br>
+        <em>We were there and it is going to be epic </em>
+    </p>
+<h3>Products</h3>
+<ul>
+    {% for product in products %}
+        <li>
+            <a href="{%url 'detail' product.id%}">
+                {{product.name}}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'product' %}"><button>Learn More</button></a>
+<a href="{% url 'register' %}"><button>Register</button></a>
+</body>
+</html>
